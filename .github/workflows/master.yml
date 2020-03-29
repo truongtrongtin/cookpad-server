@@ -1,4 +1,4 @@
-name: production
+name: Run test and deploy
 on:
   push:
     branches:
@@ -33,7 +33,7 @@ jobs:
     - name: Run test
       run: yarn test
 
-    - name: Executing remote ssh commands using ssh key
+    - name: Deploy using SSH
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.SSHHOST }}
